@@ -29,7 +29,7 @@ const menuStyle = {
 
 const disabledStyle = { opacity: 0.5, pointerEvents: 'none' }
 
-class ComponentExampleRenderExample extends PureComponent {
+class ComponentExampleRenderEditor extends PureComponent {
   state = {}
 
   static propTypes = {
@@ -137,7 +137,7 @@ class ComponentExampleRenderExample extends PureComponent {
         <Editor id={editorId} value={value} onChange={onChange} />
         {error && (
           <Segment color='red' basic secondary inverted style={errorStyle}>
-            {error}
+            {error.toString()}
           </Segment>
         )}
       </div>
@@ -145,4 +145,4 @@ class ComponentExampleRenderExample extends PureComponent {
   }
 }
 
-export default updateForKeys(['value'])(ComponentExampleRenderExample)
+export default updateForKeys(['error', 'value'])(ComponentExampleRenderEditor)
